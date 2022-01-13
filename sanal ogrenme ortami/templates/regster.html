@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+{% from "includes/formhelper.html" import render_field %}
+
+<br>
+<main class="my-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                    <div class="card"style="background-color:#191819">
+                        <div style="background-color:#191819;color:#FFFFFF" class="card-header">Register</div>
+                        <div style="background-color:#191819" class="card-body">
+                            <form name="my-form"  method="post">
+                                <div class="form-group row">
+                                    <label for="full_name" class="col-md-4 col-form-label text-md-right" style="color:#FFFFFF">Full Name</label>
+                                    
+                                    {{ render_field(form.name,style="height:40px;background-color:#2B2B2B;",class = "form-control")}}
+                                       
+                                    </div>
+                                
+
+                                <div class="form-group row">
+                                    <label for="email_address" class="col-md-4 col-form-label text-md-right" style="color:#FFFFFF">E-Mail Address</label>
+                                       {{ render_field(form.email,style="height:40px;background-color:#2B2B2B",class = "form-control")}}
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="user_name" class="col-md-4 col-form-label text-md-right" style="color:#FFFFFF">User Name</label>
+                                   {{ render_field(form.username,style="height:40px;background-color:#2B2B2B",class = "form-control")}}
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="phone_number" class="col-md-4 col-form-label text-md-right" style="color:#FFFFFF">Password</label>
+                                    {{ render_field(form.password,style="height:40px;background-color:#2B2B2B",class = "form-control")}}
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="present_address" class="col-md-4 col-form-label text-md-right" style="color:#FFFFFF">Confirm Password</label>
+                                    {{ render_field(form.confirm,style="height:40px;background-color:#2B2B2B",class = "form-control")}}
+                                </div>
+
+                               
+
+                                    <div  class="col-md-7 offset-md-4">
+                                        <button style="background-color:#2B2B2B; border-color:#FFFFFF" type="submit" class="btn btn-primary">
+                                        Register
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</main>
+
+{% endblock  %}

@@ -1,0 +1,32 @@
+
+{% extends 'layout.html' %}
+
+{% block body %}
+<strong><h3 style = "color:#FFFFFF">Posts</h3></strong>
+
+<form action="/search" method="post" class="">
+  <input name="Search_input" style="background-color:#2B2B2B;border-color:#FFFFFF; width:200px;height:40px" type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off" data-docs-version="4.2">
+   <span>
+   <br>
+   
+    <button style="background-color:#2B2B2B;border-color:#FFFFFF; width:200px;height:40px" type="submit" class="btn ">Search</button>
+    </span>
+    
+</form>
+
+
+<hr>
+
+{% if articles %}
+ <ul class="list-group" >
+ {% for article in articles %}
+ 
+  <li style="background-color:#191819;   " class="list-group-item"><a style = "color:#FFFDFE " href="article/{{article.id}}">{{article.id}}. {{article.title}} <span style="float:right">Author : {{article.author}}</span> </a> </li>
+ {% endfor %}
+ 
+ 
+</ul>
+{% else %}
+<div class="alert alert-danger">There is no article </div>
+{% endif %}
+{% endblock body %}

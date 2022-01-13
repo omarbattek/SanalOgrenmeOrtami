@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="/">
+    <img src="/static/hadi.jpg" width="30" height="30" alt="">
+  </a>
+      <a class="navbar-brand" href="/">Fırat Universitesei</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+        
+          <li class="nav-item active">
+            <a class="nav-link" href="/about">About <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <li class="nav-item active">
+            <a class="nav-link" href="/Articles">Post<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+          
+        </ul>
+ <ul class="navbar-nav ml-auto">
+          {% if session["logged_in"] %}
+          {% if session["username"] =="BETUL AY" %}
+         
+          <li class="nav-item active">
+          <a class="nav-link" href="/Dashboard">Control Panel <span class="sr-only">(current)</span></a> 
+          </li>
+          <li class="nav-item active">
+          <strong>  <a class="nav-link" href="/logout">Logout <span class="sr-only">(current)</span></a> </strong>
+          </li>
+           <li class="nav-item active">
+          <h5 style = "color:light ;font-family:algerian" class="nav-link" href="/Dashboard" >[YETKILI] {{session["username"]}} <span class="sr-only">(current)</span></h5> 
+          </li>
+          
+          {% else %}
+          <li class="nav-item active">
+            <a class="nav-link" href="/Dashboard">Control Panel <span class="sr-only">(current)</span></a> 
+            </li>
+            <li class="nav-item active">
+            <strong>  <a class="nav-link" href="/logout">Logout <span class="sr-only">(current)</span></a> </strong>
+            </li>
+           <li class="nav-item active">
+          <h5 style = "color:gray;font-family:algerian" class="nav-link" href="/Dashboard" >[Ogrenci] {{session["username"]}} <span class="sr-only">(current)</span></h5> 
+          </li>
+          
+          {% endif %}
+          
+          {% else %}
+          <li class="nav-item active">
+            <a class="nav-link" href="/sign up">sign up <span class="sr-only">(current)</span></a>
+          </li>
+          
+          <li class="nav-item">
+          <li class="nav-item active">
+            <a class="nav-link" href="/login">login <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+         {% endif %}
+      </ul>
+      </div>
+    </nav>

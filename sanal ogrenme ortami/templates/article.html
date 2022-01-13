@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% block body %}
+{% if article %}
+<div style = "color:#FFFDFE">
+<h4>{{article.title}}</h4>
+<hr>
+Author : {{article.author}}
+<hr>
+Date : {{article.created_date}}
+<hr>
+
+<div ><strong>{{article.contant|safe}}</strong></div>
+</div>
+{% else %}
+<div class="alert alert-danger">There is no article </div>
+{% endif %}
+{% endblock body %}
